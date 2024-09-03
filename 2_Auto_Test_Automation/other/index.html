@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function createUI() {
+        console.log("Creating UI");
+        if (document.getElementById("automationDirectUI")) {
+          return; // Prevent duplication
+        }
+        const container = document.createElement("div");
+        container.id = "automationDirectUI";
+        container.style.position = "fixed";
+        container.style.top = "50%";
+        container.style.left = "50%";
+        container.style.transform = "translate(-50%, -50%)";
+        container.style.zIndex = "1000";
+        container.style.backgroundColor = "#F1F0F8"; // Lighter gray
+        container.style.padding = "20px";
+        container.style.border = "5px solid #000"; // Thick border for the container
+        container.style.borderRadius = "20px"; // Rounded corners
+        container.style.boxShadow =
+          "20px 20px 18px 5px rgba(0,0,0,0.1), 0px 10px 15px -3px rgba(0,0,0,0.1)";
+        container.style.maxWidth = "400px";
+        container.style.width = "90%";
+        container.style.textAlign = "center";
+        container.style.fontFamily = "'Roboto', sans-serif";
+        container.style.height = "300px";
+        container.style.display = "flex";
+        container.style.flexDirection = "column";
+        container.style.justifyContent = "center";
+        container.style.alignItems = "center";
+
+        const title = document.createElement("h2");
+        title.textContent = "Automation Extension";
+        title.style.color = "#000";
+        title.style.marginBottom = "20px";
+        title.style.textDecoration = "underline";
+        container.appendChild(title);
+
+        const levelSelect = document.createElement("select");
+        levelSelect.style.width = "150px";
+        levelSelect.style.padding = "10px";
+        levelSelect.style.marginBottom = "20px";
+        levelSelect.style.border = "1px solid #ccc";
+        levelSelect.style.borderRadius = "10px";
+        levelSelect.id = "levelSelect";
+
+        const levels = [
+          { text: "Level 1", value: "1" },
+          { text: "Level 2", value: "2" },
+          { text: "Level 3", value: "3" },
+          { text: "Level 4", value: "4" },
+          { text: "Level 5", value: "5" },
+        ];
+
+        levels.forEach((level) => {
+          const option = document.createElement("option");
+          option.text = level.text;
+          option.value = level.value;
+          levelSelect.appendChild(option);
+        });
+
+        container.appendChild(levelSelect);
+
+        const questionStart = document.createElement("input");
+        questionStart.type = "number";
+        questionStart.placeholder = "Start";
+        questionStart.style.width = "150px";
+        questionStart.style.padding = "10px";
+        questionStart.style.marginBottom = "20px";
+        questionStart.style.border = "1px solid #ccc";
+        questionStart.style.borderRadius = "10px";
+        questionStart.value = 1;
+        questionStart.min = 1;
+        questionStart.max = TESTIDS[levelSelect.value].length;
+        container.appendChild(questionStart);
+
+        const startButton = document.createElement("button");
+        startButton.textContent = "Start";
+        startButton.style.width = "150px";
+        startButton.style.padding = "15px";
+        startButton.style.backgroundColor = "#28a745";
+        startButton.style.color = "white";
+        startButton.style.border = "none";
+        startButton.style.borderRadius = "10px";
+        startButton.style.cursor = "pointer";
+        startButton.style.marginBottom = "20px"; // Gap between buttons
+        startButton.style.transition =
+          "background-color 0.3s ease, transform 0.2s ease";
+        startButton.onmouseover = () => {
+          startButton.style.backgroundColor = "#3ae56d"; // Brighter green
+          startButton.style.transform = "scale(1.05)";
+        };
+        startButton.onmouseout = () => {
+          startButton.style.backgroundColor = "#28a745";
+          startButton.style.transform = "scale(1)";
+        };
+        startButton.onclick = () => {
+          const selectedLevel = levelSelect.value;
+          const startQuestion = questionStart.value;
+          setLocalData(selectedLevel, (startQuestion = 0));
+        };
+        container.appendChild(startButton);
+
+        const stopButton = document.createElement("button");
+        stopButton.textContent = "Stop";
+        stopButton.style.width = "150px";
+        stopButton.style.padding = "15px";
+        stopButton.style.backgroundColor = "#dc3545";
+        stopButton.style.color = "white";
+        stopButton.style.border = "none";
+        stopButton.style.borderRadius = "10px";
+        stopButton.style.cursor = "pointer";
+        stopButton.style.transition =
+          "background-color 0.3s ease, transform 0.2s ease";
+        stopButton.onmouseover = () => {
+          stopButton.style.backgroundColor = "#f74c4c"; // Brighter red
+          stopButton.style.transform = "scale(1.05)";
+        };
+        stopButton.onmouseout = () => {
+          stopButton.style.backgroundColor = "#dc3545";
+          stopButton.style.transform = "scale(1)";
+        };
+        stopButton.onclick = stopAll;
+        container.appendChild(stopButton);
+
+        document.body.appendChild(container);
+      }
+      createUI();
+    </script>
+  </body>
+</html>

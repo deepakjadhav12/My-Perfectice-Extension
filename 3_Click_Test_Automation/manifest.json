@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "3 Myperfectice Click Test Automation",
+  "description": "Auto Complete",
+  "version": "0.1",
+  "permissions": ["scripting", "tabs", "activeTab"],
+  "host_permissions": ["https://lpu.myperfectice.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://lpu.myperfectice.com/*"],
+      "js": ["index.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "run-script": {
+      "suggested_key": {
+        "default": "Alt+Q"
+      },
+      "description": "Run the script"
+    },
+    "stop-script": {
+      "suggested_key": {
+        "default": "Alt+W"
+      },
+      "description": "Stop the script"
+    }
+  }
+}

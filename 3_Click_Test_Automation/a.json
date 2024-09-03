@@ -1,0 +1,26 @@
+{
+  "ElapseSeconds": "1970-01-01T00:00:00.900Z",
+  "TimeCountDown": null,
+  "savePoint":          "2024-07-13T20:03:26.798Z",
+  "lastCheckpointTime": "2024-07-13T20:03:23.587Z",
+  "serverStartTime":    "2024-07-13T20:03:14.279Z",
+  "localStartTime":     "2024-07-13T20:03:14.355Z"
+}
+
+{
+    "ElapseSeconds": "1970-01-01T00:00:01.200Z",
+    "TimeCountDown": null,
+    "savePoint":          "2024-07-14T02:11:54.261Z",
+    "lastCheckpointTime": "2024-07-14T02:11:57.261Z",
+    "serverStartTime":    "2024-07-13T20:21:57.171Z",
+    "localStartTime":     "2024-07-13T20:21:57.261Z"
+}
+
+  {
+    "ElapseSeconds": 1200,
+    "TimeCountDown": 0,
+    "savePoint":          "2024-07-13T21:01:33.519Z",
+    "lastCheckpointTime": "2024-07-13T21:01:30.519Z",
+    "serverStartTime":    "2024-07-13T20:41:33.485Z",
+    "localStartTime":     "2024-07-13T20:41:33.519Z"
+  }

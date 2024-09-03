@@ -1,0 +1,26 @@
+{
+  "questionIndex": 4,
+  "sectionNo": 0,
+  "lastLength": 0,
+  "elapseSeconds": 101,
+  "sectionTimeElapse": {},
+  "testTimeCountDown": 799,
+  "lastCheckpointTime": 1719732768610,
+  "serverStartTime": "2024-06-30T07:31:52.069Z",
+  "localStartTime": "2024-06-30T07:31:49.749Z",
+  "savePoint": 1719732810915
+}
+
+
+{
+  "questionIndex": 14,
+  "sectionNo": 0,
+  "lastLength": 0,
+  "elapseSeconds": 1200,
+  "sectionTimeElapse": {},
+  "testTimeCountDown": 0,
+  "lastCheckpointTime": 1720160867806,
+  "serverStartTime": "2024-07-05T06:07:47.762Z",
+  "localStartTime": "2024-07-05T06:07:47.806Z",
+  "savePoint": 1720160867806
+}
